@@ -231,6 +231,14 @@
     return;
   }
 
+  // gold snow on the ivory envelope screen (no warm lights there); turns white when the envelope opens
+  function idleSnow() {
+    snow.setGold(true);
+    snow.setLevel(0, true);
+    snow.burst();
+  }
+  idleSnow();
+
   /* ---------- state machine ----------
      idle → openingSeal → openingEnvelope → revealingLetter → snowfallTransition (letter unfolds) → invitationVisible
      Each step awaits the previous animation's `finished`; `run` invalidates a sequence on skip/replay. */
@@ -304,9 +312,9 @@
     play(flap, [{ opacity: 1 }, { opacity: 0 }], { duration: 450 });
     play(wine, [{ opacity: 0 }, { opacity: 1 }], { duration: 800 });
     document.body.style.background = "#391923";
+    snow.setGold(false);
     snow.setLevel(1);
     snow.burst(); // heavy fall as the envelope opens, and it never stops
-    play(snowCanvas, [{ opacity: 0 }, { opacity: 1 }], { duration: 600 });
     await play(letter, [
       { transform: "translateY(" + out + "px)" },
       { transform: "translateY(" + (out + dy) + "px) scale(" + fit + ")" }
@@ -343,7 +351,7 @@
     card.style.opacity = "";
     document.body.style.background = "";
     setState("invitationVisible");
-    if (!snow.running()) snow.burst(); // Skip gets the same snowfall
+    if (!snow.running() || snow.gold()) { snow.setGold(false); snow.burst(); } // Skip gets the same snowfall
     snow.setLevel(menu.hidden ? 1 : .4);
     $("#inv-title").focus({ preventScroll: true });
   }
@@ -357,7 +365,7 @@
   function replay() {
     run++;
     clearAnimations();
-    snow.stop();
+    idleSnow();
     flap.classList.remove("is-open");
     letter.style.zIndex = "";
     closeMenu(true);

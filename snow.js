@@ -16,6 +16,8 @@ window.Snowfall = function (canvas) {
     return c;
   }
   var flakeImg = sprite("rgba(255,252,248,1)", "rgba(255,250,244,.85)", "rgba(255,250,244,0)");
+  var goldImg = sprite("rgba(196,158,98,.95)", "rgba(184,149,97,.6)", "rgba(184,149,97,0)");
+  var gold = false; // gold flakes for the ivory envelope screen
   var glowImg = sprite("rgba(232,196,140,1)", "rgba(214,170,110,.5)", "rgba(214,170,110,0)");
 
   function flake(y) {
@@ -80,8 +82,8 @@ window.Snowfall = function (canvas) {
       var x = f.x + Math.sin(f.phase) * f.sway;
       var d = f.r * (f.bokeh ? 2.2 : 3);
       ctx.globalAlpha = f.a;
-      if (f.bokeh) ctx.globalCompositeOperation = "lighter";
-      ctx.drawImage(flakeImg, x - d / 2, f.y - d / 2, d, d);
+      if (f.bokeh && !gold) ctx.globalCompositeOperation = "lighter";
+      ctx.drawImage(gold ? goldImg : flakeImg, x - d / 2, f.y - d / 2, d, d);
       ctx.globalCompositeOperation = "source-over";
     }
   }
@@ -116,6 +118,8 @@ window.Snowfall = function (canvas) {
     burst: burst,
     stop: stop,
     running: function () { return running; },
-    setLevel: function (v) { target = v; }
+    setLevel: function (v, instant) { target = v; if (instant) level = v; },
+    setGold: function (v) { gold = v; },
+    gold: function () { return gold; }
   };
 };
