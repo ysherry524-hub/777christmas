@@ -387,8 +387,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .menu__pending { margin: 0; font: italic 400 16px/1.5 var(--serif); color: var(--gold-antique); }
 .menu__section + .menu__section { margin-top: 22px; }
 .menu__section h4 {
-  margin: 0 0 12px;
-  line-height: 1.6;
+  margin: 0 0 10px;
   font: 500 10px/1 var(--sans);
   letter-spacing: .3em;
   padding-left: .3em;

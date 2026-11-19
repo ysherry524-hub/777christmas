@@ -47,49 +47,49 @@ window.EVENT = {
   venueDetail: "Exact event location to be announced.",
 
   foodMenu: [
-    { title: "Appetizers · 前菜", items: [
-      { name: "Crispy Fried Shrimp", description: "香酥炸虾" },
-      { name: "Teriyaki Chicken Skewers", description: "照烧鸡肉串" },
-      { name: "Pineapple Beef Meatballs", description: "凤梨牛肉丸" }
+    { title: "Appetizers", items: [
+      { name: "Crispy Fried Shrimp" },
+      { name: "Teriyaki Chicken Skewers" },
+      { name: "Pineapple Beef Meatballs" }
     ] },
-    { title: "Salad · 沙拉", items: [
-      { name: "Fresh Garden Salad", description: "田园蔬菜沙拉" }
+    { title: "Salad", items: [
+      { name: "Fresh Garden Salad" }
     ] },
-    { title: "Main Course · 主菜", items: [
-      { name: "Slow-Roasted Beef Brisket", description: "慢烤牛胸肉" }
+    { title: "Main Course", items: [
+      { name: "Slow-Roasted Beef Brisket" }
     ] },
-    { title: "Sides & Light Bites · 配菜及轻食", items: [
-      { name: "Dried Scallop Pasta", description: "干贝通心粉" },
-      { name: "Hawaiian Mini Burgers", description: "夏威夷小汉堡" },
-      { name: "Egg Salad Sandwiches", description: "鸡蛋三明治" }
+    { title: "Sides & Light Bites", items: [
+      { name: "Dried Scallop Pasta" },
+      { name: "Hawaiian Mini Burgers" },
+      { name: "Egg Salad Sandwiches" }
     ] },
-    { title: "Desserts & Fruits · 甜点及水果", items: [
-      { name: "Mini Cupcakes", description: "迷你小蛋糕" },
-      { name: "Deluxe Fresh Fruit Platter", description: "豪华水果拼盘" }
+    { title: "Desserts & Fruits", items: [
+      { name: "Mini Cupcakes" },
+      { name: "Deluxe Fresh Fruit Platter" }
     ] }
   ],
   beverageMenu: [
-    { title: "Handcrafted Cocktails · 手工调制鸡尾酒", items: [
-      { name: "Margarita", description: "玛格丽特" },
-      { name: "Vodka Soda", description: "伏特加苏打" },
-      { name: "Whiskey Ginger", description: "威士忌姜汁" }
+    { title: "Handcrafted Cocktails", items: [
+      { name: "Margarita" },
+      { name: "Vodka Soda" },
+      { name: "Whiskey Ginger" }
     ] },
-    { title: "Champagne · 香槟", items: [
-      { name: "Brut Champagne", description: "干型香槟" },
-      { name: "Rosé Champagne", description: "桃红香槟" }
+    { title: "Champagne", items: [
+      { name: "Brut Champagne" },
+      { name: "Rosé Champagne" }
     ] },
-    { title: "Beer · 啤酒", items: [
-      { name: "Light Lager", description: "淡味拉格啤酒" },
-      { name: "IPA", description: "印度淡色艾尔啤酒" }
+    { title: "Beer", items: [
+      { name: "Light Lager" },
+      { name: "IPA" }
     ] }
   ],
-  foodMenuTitle: "Dining Menu · 餐单",
-  beverageMenuTitle: "Beverages · 酒水",
+  foodMenuTitle: "Dining Menu",
+  beverageMenuTitle: "Beverage Selection",
   foodMenuPending: "Menu details to be announced",
   beverageMenuPending: "Beverage selections to be announced",
 
   // Envelope screen
-  envelopeKicker: "777 Tower · Los Angeles",
+  envelopeKicker: "777 Tower",
   envelopeHeading: "A Special Invitation Awaits",
   envelopeHint: "Click the seal to open.",
   envelopeHintTouch: "Tap the seal to open.",
