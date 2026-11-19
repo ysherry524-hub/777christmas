@@ -1,4 +1,4 @@
-/* Snow on a 2D canvas: a heavy fall the moment the envelope opens, which then thins out and stops.
+/* Snow on a 2D canvas: a heavy fall the moment the envelope opens that keeps falling.
    Warm out-of-focus lights stay behind it, like a lit room seen through a window. */
 window.Snowfall = function (canvas) {
   var ctx = canvas.getContext("2d");
@@ -86,7 +86,7 @@ window.Snowfall = function (canvas) {
     }
   }
 
-  // heavy snow, already filling the view, falling until `settleAfter` ms, then stopping
+  // heavy snow, already filling the view; keeps falling unless `settleAfter` ms is given
   function burst(settleAfter) {
     clearTimeout(stopTimer);
     if (!running) { running = true; resize(); last = 0; raf = requestAnimationFrame(frame); }
@@ -94,7 +94,7 @@ window.Snowfall = function (canvas) {
     var n = flakeCount();
     flakes = [];
     for (var i = 0; i < n; i++) flakes.push(flake(Math.random() * h * 1.1 - h * .1));
-    stopTimer = setTimeout(function () { spawning = false; }, settleAfter);
+    if (settleAfter) stopTimer = setTimeout(function () { spawning = false; }, settleAfter);
   }
   function stop() {
     clearTimeout(stopTimer);

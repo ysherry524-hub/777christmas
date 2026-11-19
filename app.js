@@ -305,7 +305,7 @@
     play(wine, [{ opacity: 0 }, { opacity: 1 }], { duration: 800 });
     document.body.style.background = "#391923";
     snow.setLevel(1);
-    snow.burst(3200); // heavy fall as the envelope opens; stops shortly after the card is up
+    snow.burst(); // heavy fall as the envelope opens, and it never stops
     play(snowCanvas, [{ opacity: 0 }, { opacity: 1 }], { duration: 600 });
     await play(letter, [
       { transform: "translateY(" + out + "px)" },
@@ -343,7 +343,7 @@
     card.style.opacity = "";
     document.body.style.background = "";
     setState("invitationVisible");
-    if (!snow.running()) snow.burst(2200); // Skip gets the same short flurry
+    if (!snow.running()) snow.burst(); // Skip gets the same snowfall
     snow.setLevel(menu.hidden ? 1 : .4);
     $("#inv-title").focus({ preventScroll: true });
   }
