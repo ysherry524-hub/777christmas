@@ -406,6 +406,16 @@
     openEnvelope().catch(function () {});
   });
   $(".skip").addEventListener("click", skip);
+  // arriving from the seal in the email (?open): that click already counts, so open by itself
+  if (params.has("open")) {
+    var autoOpen = function () {
+      if (document.hidden) return;
+      document.removeEventListener("visibilitychange", autoOpen);
+      setTimeout(function () { openEnvelope().catch(function () {}); }, 1200);
+    };
+    document.addEventListener("visibilitychange", autoOpen);
+    window.addEventListener("load", autoOpen, { once: true });
+  }
   menuToggle.addEventListener("click", function () {
     menu.hidden ? openMenu() : closeMenu();
   });
