@@ -42,9 +42,8 @@ window.EVENT = {
   time: "4:00 PM – 6:00 PM",
   displayTime: "4:00 – 6:00 PM",
   timezone: "America/Los_Angeles",
-  location: "777 Tower, Los Angeles, California",
-  // Replace with the room / floor once confirmed, e.g. "Ninth Floor Conference Center"
-  venueDetail: "Exact event location to be announced.",
+  location: "First Floor Lobby, 777 Tower, Los Angeles, California",
+  venueDetail: "First Floor Lobby",
 
   foodMenu: [
     { title: "Appetizers", items: [
