@@ -306,7 +306,7 @@
     var r = letter.getBoundingClientRect();
     var dy = window.innerHeight / 2 - (r.top + r.height / 2);
     var fit = Math.min(1.08, (window.innerWidth - 32) / r.width);
-    [back, pocket, envShadow, cord].forEach(function (el) {
+    [back, pocket, envShadow].forEach(function (el) {
       play(el, [{ opacity: 1, transform: "translateY(0)" }, { opacity: 0, transform: "translateY(22px)" }], { duration: 650 });
     });
     play(flap, [{ opacity: 1 }, { opacity: 0 }], { duration: 450 });
