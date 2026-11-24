@@ -224,7 +224,7 @@
     $(".stage__hint").textContent = "Your Holiday Invitation Awaits";
     var cta = document.createElement("p");
     cta.className = "stage__cta";
-    cta.textContent = "Click to Open";
+    cta.textContent = E.envelopeHint;
     stage.appendChild(cta);
     var az = params.get("az");
     if (az) seal.querySelectorAll("feDistantLight")[1].setAttribute("azimuth", az);
